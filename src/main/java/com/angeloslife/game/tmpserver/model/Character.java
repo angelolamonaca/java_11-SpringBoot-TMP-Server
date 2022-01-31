@@ -8,20 +8,11 @@ import lombok.*;
  * @since 29/01/2022
  */
 @AllArgsConstructor
-@RequiredArgsConstructor
 @Getter
 @Setter
 @ToString
 public class Character {
 
-    @NonNull
     int id;
-
     Position position;
-}
-
-class Position {
-    float x;
-    float y;
-    float z;
 }

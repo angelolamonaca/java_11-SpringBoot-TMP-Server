@@ -3,6 +3,7 @@ package com.angeloslife.game.tmpserver.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @version 1.0
  * @since 29/01/2022
  */
+@ToString
 @Getter
 @Setter
 @AllArgsConstructor
