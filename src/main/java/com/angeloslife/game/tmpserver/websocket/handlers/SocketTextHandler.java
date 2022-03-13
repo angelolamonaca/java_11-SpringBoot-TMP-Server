@@ -1,11 +1,15 @@
-package com.angeloslife.game.tmpserver.config;
+package com.angeloslife.game.tmpserver.websocket.handlers;
 
+import com.angeloslife.game.tmpserver.websocket.models.Greeting;
+import com.angeloslife.game.tmpserver.websocket.models.HelloMessage;
+import com.google.gson.Gson;
 import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
+import org.springframework.web.util.HtmlUtils;
 
 import java.io.IOException;
 
@@ -21,9 +25,12 @@ public class SocketTextHandler extends TextWebSocketHandler {
     public void handleTextMessage(WebSocketSession session, TextMessage message)
             throws InterruptedException, IOException, JSONException {
 
+        Thread.sleep(1000); // simulated delay
         String payload = message.getPayload();
-        JSONObject jsonObject = new JSONObject(payload);
-        session.sendMessage(new TextMessage("Hi " + jsonObject.get("user") + " how may we help you?"));
+        Gson gson = new Gson(); // Or use new GsonBuilder().create();
+        HelloMessage helloMessage = gson.fromJson(payload, HelloMessage.class); // de
+        session.sendMessage(new TextMessage("Hi " + helloMessage.getName() + " how may we help you?"));
+
     }
 
 }
