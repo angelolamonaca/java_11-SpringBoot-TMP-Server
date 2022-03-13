@@ -1,21 +1,13 @@
-package com.angeloslife.game.tmpserver.controllers;
+package com.angeloslife.game.tmpserver.web.controllers;
 
 import com.angeloslife.game.tmpserver.TmpServerApplication;
-import com.angeloslife.game.tmpserver.model.Character;
-import com.google.gson.Gson;
-import lombok.extern.log4j.Log4j;
+import com.angeloslife.game.tmpserver.web.model.Character;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.logging.log4j.LogBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Logger;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 

@@ -1,4 +1,4 @@
-package com.angeloslife.game.tmpserver.model;
+package com.angeloslife.game.tmpserver.web.model;
 
 import lombok.*;
 
