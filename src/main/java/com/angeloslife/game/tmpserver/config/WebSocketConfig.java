@@ -1,6 +1,6 @@
 package com.angeloslife.game.tmpserver.config;
 
-import com.angeloslife.game.tmpserver.websocket.handlers.SocketTextHandler;
+import com.angeloslife.game.tmpserver.websocket.handlers.OnlineCharactersHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.*;
 
@@ -14,7 +14,7 @@ import org.springframework.web.socket.config.annotation.*;
 public class WebSocketConfig implements WebSocketConfigurer {
 
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(new SocketTextHandler(), "/user");
+        registry.addHandler(new OnlineCharactersHandler(), "/world/characters");
     }
 
 }
