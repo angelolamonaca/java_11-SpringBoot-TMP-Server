@@ -38,7 +38,7 @@ public class CharacterController {
 
         Gson gson = new Gson();
         gson.toJson(world);
-        OnlineCharactersHandler.onlineCharactersSession.get(0L).sendMessage(new TextMessage(gson.toJson(world)));
+        OnlineCharactersHandler.onlineCharactersSession.get("Bearer al123").sendMessage(new TextMessage(gson.toJson(world)));
 
         return ResponseEntity
                 .ok(HttpStatus.OK);
